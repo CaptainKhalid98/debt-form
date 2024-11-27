@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    margin: 0;
+  }
+  
+  .form-container {
+    background: #fff;
+    padding: 68px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+  
+  .progress-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .progress-bar .step {
+    width: 77px;
+  height: 60px;
+  border: 2px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-right-color: rgb(221, 221, 221);
+    border-bottom-color: rgb(221, 221, 221);
+    border-left-color: rgb(221, 221, 221);
+  background: #f5f5f5;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 57px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #bbb;
+  margin: 0 10px;
+  position: relative;
+  z-index: 1;
+  }
+  
+  .progress-bar .step.active {
+    border-color: #4caf50;
+    background: #4caf50;
+    color: #fff;
+  }
+  
+  .progress-bar .progress {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    height: 5px;
+    background: #4caf50;
+    transform: translateY(-50%);
+    z-index: 0;
+    width: 0;
+    transition: width 0.3s;
+  }
+  
+  .form-step {
+    display: none;
+  }
+  
+  .form-step.active {
+    display: block;
+  }
+
+  #fico-score {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+    background: #45a049;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 16px;
+  }
+
+  input[type="radio"] {
+    width: 6%;
+   
+}
+  
+#result {
+  text-align: center;
+}
+
+.result-head{
+
+  text-align: center;
+
+
+}
+
+.result-headtwo{
+  text-align: center;
+  
+}

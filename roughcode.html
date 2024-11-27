@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt and Credit Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .warning {
+            color: orange;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="form-group">
+            <div class="warning">▲</div>
+            <label for="monthly-payment">What amount can you afford to pay monthly for all your debt combined?</label>
+            <input type="text" id="monthly-payment" name="monthly-payment" placeholder="$0">
+        </div>
+        
+        <div class="form-group">
+            <div class="warning">▲</div>
+            <label>Are you behind on any of your payments?</label>
+            <div>
+                <input type="radio" id="more-than-90-days" name="payment-status" value="more-than-90-days">
+                <label for="more-than-90-days">Yes - More Than 90 Days</label>
+            </div>
+            <div>
+                <input type="radio" id="more-than-30-days" name="payment-status" value="more-than-30-days">
+                <label for="more-than-30-days">Yes - More Than 30 Days</label>
+            </div>
+            <div>
+                <input type="radio" id="up-to-30-days" name="payment-status" value="up-to-30-days">
+                <label for="up-to-30-days">Yes - Up To 30 Days</label>
+            </div>
+            <div>
+                <input type="radio" id="no" name="payment-status" value="no">
+                <label for="no">No</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="warning">▲</div>
+            <label for="fico-score">What is your approximate FICO credit score?</label>
+            <select id="fico-score" name="fico-score">
+                <option value="above-740">Above 740</option>
+                <option value="690-739">690-739</option>
+                <option value="620-689">620-689</option>
+                <option value="600-619">600-619</option>
+                <option value="580-599">580-599</option>
+                <option value="below-580">Below 580</option>
+            </select>
+        </div>
+    </form>
+</body>
+</html>
+
+
+   <!-- Code For the page -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4 Step Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+      <div class="step active">1</div>
+      <div class="step">2</div>
+      <div class="step">3</div>
+      <div class="step">4</div>
+      <div class="step">5</div>
+    </div>
+
+    <form id="form">
+      <!-- Step 1 -->
+      <div class="form-step active">
+        <h2>Step 1</h2>
+        <input type="text" placeholder="Enter your name" required>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="form-step">
+        <h2>Step 2</h2>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="form-step">
+        <h2>Step 3</h2>
+        <input type="password" placeholder="Enter your password" required>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="form-step">
+        <h2>Step 4</h2>
+        <input type="text" placeholder="Confirm your details" required>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+
+
+       <!-- Step 5 -->
+       <div class="form-step">
+        <h2>Step 5</h2>
+        <input type="text" placeholder="Confirm your details" required>
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+const progress = document.getElementById('progress');
+const nextBtns = document.querySelectorAll('.next-btn');
+const prevBtns = document.querySelectorAll('.prev-btn');
+const formSteps = document.querySelectorAll('.form-step');
+const steps = document.querySelectorAll('.step');
+
+let formStepNum = 0;
+
+// Next Button Click
+nextBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    formStepNum++;
+    updateFormSteps();
+    updateProgressBar();
+  });
+});
+
+// Previous Button Click
+prevBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    formStepNum--;
+    updateFormSteps();
+    updateProgressBar();
+  });
+});
+
+// Update Form Steps
+function updateFormSteps() {
+  formSteps.forEach((formStep) => {
+    formStep.classList.remove('active');
+  });
+  formSteps[formStepNum].classList.add('active');
+}
+
+// Update Progress Bar
+function updateProgressBar() {
+  steps.forEach((step, index) => {
+    if (index <= formStepNum) {
+      step.classList.add('active');
+    } else {
+      step.classList.remove('active');
+    }
+  });
+
+  const activeSteps = document.querySelectorAll('.step.active');
+  progress.style.width =
+    ((activeSteps.length - 1) / (steps.length - 1)) * 100 + '%';
+}
+
+
+
+const progress = document.getElementById('progress');
+const nextBtns = document.querySelectorAll('.next-btn');
+const prevBtns = document.querySelectorAll('.prev-btn');
+const formSteps = document.querySelectorAll('.form-step');
+const steps = document.querySelectorAll('.step');
+
+let formStepNum = 0;
+
+// Next Button Click
+nextBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    formStepNum++;
+    updateFormSteps();
+    updateProgressBar();
+  });
+});
+
+// Previous Button Click
+prevBtns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    formStepNum--;
+    updateFormSteps();
+    updateProgressBar();
+  });
+});
+
+// Update Form Steps
+function updateFormSteps() {
+  formSteps.forEach((formStep) => {
+    formStep.classList.remove('active');
+  });
+  formSteps[formStepNum].classList.add('active');
+}
+
+// Update Progress Bar
+function updateProgressBar() {
+  const baseIncrement = 100 / (steps.length - 1); // Equal increment for most steps
+  let progressWidth = 0;
+
+  if (formStepNum === 3) {
+    // Custom increment for the 3rd step (increase)
+    progressWidth = 3 * baseIncrement + baseIncrement * 0.5; // 50% more for the 3rd step
+  } else if (formStepNum === 4) {
+    // Custom increment for the 4th step (decrease)
+    progressWidth = 3 * baseIncrement + baseIncrement * 0.3; // Smaller increment for the 4th step
+  } else {
+    // Default increments for other steps
+    progressWidth = formStepNum * baseIncrement;
+  }
+
+  // Update progress bar width
+  progress.style.width = `${progressWidth}%`;
+
+  // Update active class for steps
+  steps.forEach((step, index) => {
+    if (index <= formStepNum) {
+      step.classList.add('active');
+    } else {
+      step.classList.remove('active');
+    }
+  });
+}

@@ -1,0 +1,19 @@
+<form id="myForm">
+    <label for="inputField">Enter something:</label>
+    <input type="text" id="inputField" name="inputField" required>
+    <button type="submit">Next Step</button>
+  </form>
+  <p id="error-message" style="color:red; display:none;">Please fill in the field before proceeding.</p>
+  
+  <script> document.getElementById('myForm').addEventListener('submit', function(event) {
+    var inputField = document.getElementById('inputField').value;
+    if (!inputField) {
+      event.preventDefault();  // Prevent form submission
+      document.getElementById('error-message').style.display = 'block';  // Show error message
+    } else {
+      document.getElementById('error-message').style.display = 'none';  // Hide error message
+    }
+  });
+  </script>
+  </body>
+  
