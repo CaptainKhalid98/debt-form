@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>4 Step Form</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="form-container">
     <div class="progress-bar">
@@ -14,55 +16,55 @@
       <div class="step">About</div>
       <div class="step">Finances</div>
       <div class="step end">Results</div>
-    
+
     </div>
 
     <form id="form">
       <!-- Step 1 -->
       <div class="form-step active">
         <h2>Step 1</h2>
-      
-            <div class="form-group">
-              <div class="warning">▲</div>
-              <label for="monthly-payment">What amount can you afford to pay monthly for all your debt combined?</label>
-              <input type="number" id="monthly-payment" name="monthly-payment" required placeholder="$0">
-          </div>
-          
-          <div class="form-group">
-              <div class="warning">▲</div>
-              <label>Are you behind on any of your payments?</label>
-              <div>
-                  <input type="radio" id="more-than-90-days" name="payment-status" value="more-than-90-days">
-                  <label for="more-than-90-days">Yes - More Than 90 Days</label>
-              </div>
-              <div>
-                  <input type="radio" id="more-than-30-days" name="payment-status" value="more-than-30-days">
-                  <label for="more-than-30-days">Yes - More Than 30 Days</label>
-              </div>
-              <div>
-                  <input type="radio" id="up-to-30-days" name="payment-status" value="up-to-30-days">
-                  <label for="up-to-30-days">Yes - Up To 30 Days</label>
-              </div>
-              <div>
-                  <input type="radio" id="no" name="payment-status" value="no">
-                  <label for="no">No</label>
-              </div>
-          </div>
-  
-          <div class="form-group">
-              <div class="warning">▲</div>
-              <label for="fico-score">What is your approximate FICO credit score?</label>
-              <select id="fico-score" name="fico-score">
-                  <option value="above-740">Above 740</option>
-                  <option value="690-739">690-739</option>
-                  <option value="620-689">620-689</option>
-                  <option value="600-619">600-619</option>
-                  <option value="580-599">580-599</option>
-                  <option value="below-580">Below 580</option>
-              </select>
-          </div>
 
-          
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="monthly-payment">What amount can you afford to pay monthly for all your debt combined?</label>
+          <input type="number" id="monthly-payment" name="monthly-payment" required placeholder="$0">
+        </div>
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label>Are you behind on any of your payments?</label>
+          <div>
+            <input type="radio" id="more-than-90-days" name="payment-status" value="more-than-90-days">
+            <label for="more-than-90-days">Yes - More Than 90 Days</label>
+          </div>
+          <div>
+            <input type="radio" id="more-than-30-days" name="payment-status" value="more-than-30-days">
+            <label for="more-than-30-days">Yes - More Than 30 Days</label>
+          </div>
+          <div>
+            <input type="radio" id="up-to-30-days" name="payment-status" value="up-to-30-days">
+            <label for="up-to-30-days">Yes - Up To 30 Days</label>
+          </div>
+          <div>
+            <input type="radio" id="no" name="payment-status" value="no">
+            <label for="no">No</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="fico-score">What is your approximate FICO credit score?</label>
+          <select id="fico-score" name="fico-score">
+            <option value="above-740">Above 740</option>
+            <option value="690-739">690-739</option>
+            <option value="620-689">620-689</option>
+            <option value="600-619">600-619</option>
+            <option value="580-599">580-599</option>
+            <option value="below-580">Below 580</option>
+          </select>
+        </div>
+
+
 
         <button type="button" class="next-btn">Next</button>
       </div>
@@ -73,24 +75,26 @@
       <div class="form-step">
         <h2>Step 2</h2>
         <div class="form-group">
-            <div class="warning">▲</div>
-            <label for="tax-debt-amount">Approximately how much tax debt do you have (that you cannot pay in full right now)</label>
-            <input type="number" id="tax-debt-amount" name="tax-debt-amount" required placeholder="$0">
+          <div class="warning">▲</div>
+          <label for="tax-debt-amount">Approximately how much tax debt do you have (that you cannot pay in full right
+            now)</label>
+          <input type="number" id="tax-debt-amount" name="tax-debt-amount" required placeholder="$0">
         </div>
 
         <div class="form-group">
           <div class="warning">▲</div>
           <label for="student-loan-amount">Approximately how much student loan debt do you have?</label>
-            <input type="number" id="student-loan-amount" name="student-loan-amount" placeholder="$0" required>
-          
-      </div>
+          <input type="number" id="student-loan-amount" name="student-loan-amount" placeholder="$0" required>
 
-      <div class="form-group">
-        <div class="warning">▲</div>
-        <label for="unsecured-debt-amount">Approximately how much unsecured debt such as medical, credit card and personal loans do you have?
-          Please do not include auto or student loans.</label>
-        <input type="number" id="unsecured-debt-amount" name="unsecured-debt-amount" placeholder="$0" required>
-    </div>
+        </div>
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="unsecured-debt-amount">Approximately how much unsecured debt such as medical, credit card and
+            personal loans do you have?
+            Please do not include auto or student loans.</label>
+          <input type="number" id="unsecured-debt-amount" name="unsecured-debt-amount" placeholder="$0" required>
+        </div>
 
         <button type="button" class="prev-btn">Back</button>
         <button type="button" class="next-btn">Next</button>
@@ -100,50 +104,56 @@
       <div class="form-step">
         <h2>Step 3</h2>
 
-        <label for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt settlement, with potential savings for each as well as the pros and cons.
-        <br>
-        <br>
-        Just complete the following questions to receive your free results.
-          
+        <label for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt
+          settlement, with potential savings for each as well as the pros and cons.
+          <br>
+          <br>
+          Just complete the following questions to receive your free results.
+
         </label>
         <br>
         <br>
-        <label for="unsecured-dept">Note: Ascend may receive a referral fee if you choose a free consultation. Our partners conduct free, no-hassle evaluations to learn about your options. You can complete it over the phone in as little as 10 minutes. The attorney fees are affordable, and often a flat fee. All initial consultations are 100% free of charge, and all lawyers are licensed in your state. By selecting a partner above to reach out to you, you agree that a partner may contact you (including autodials, pre-recorded calls, and SMS) to answer your questions about relief.
-       
-            
-       </label>
+        <label for="unsecured-dept">Note: Ascend may receive a referral fee if you choose a free consultation. Our
+          partners conduct free, no-hassle evaluations to learn about your options. You can complete it over the phone
+          in as little as 10 minutes. The attorney fees are affordable, and often a flat fee. All initial consultations
+          are 100% free of charge, and all lawyers are licensed in your state. By selecting a partner above to reach out
+          to you, you agree that a partner may contact you (including autodials, pre-recorded calls, and SMS) to answer
+          your questions about relief.
 
-         
 
-       <br>
-       <br>
+        </label>
 
-      
 
-       <div class="form-group">
-        <div class="warning">▲</div>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="fname" placeholder="First Name">
-       </div>
 
-       <div class="form-group">
-        <div class="warning">▲</div>
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lname" placeholder="Last Name">
-       </div>
+        <br>
+        <br>
 
-       <div class="form-group">
-        <div class="warning">▲</div>
-        <label for="email">Email Address</label>
-        <input type="text" id="email" name="email" placeholder="Email Address">
-       </div>
 
-       <div class="form-group">
-        <div class="warning">▲</div>
-        <label for="number">Phone Number</label>
-        <input type="text" id="number" name="number" placeholder="Phone Number">
-       </div>
-        
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" placeholder="Email Address">
+        </div>
+
+        <div class="form-group">
+          <div class="warning">▲</div>
+          <label for="number">Phone Number</label>
+          <input type="text" id="number" name="number" placeholder="Phone Number">
+        </div>
+
         <button type="button" class="prev-btn">Back</button>
         <button type="button" onclick="calculateLoans()" class="next-btn">See Results</button>
       </div>
@@ -153,22 +163,25 @@
         <br><br>
         <h2 class="result-head">Debt Consolidation Loan and Alternatives
         </h2>
-        <p class="result-headtwo">Your information has been received and a senior debt counselor will be reaching out to you via email, phone and SMS to help you evaluate these options. There is no credit report impact for having your free, no-obligation and confidential consultation.</p>
+        <p class="result-headtwo">Your information has been received and a senior debt counselor will be reaching out to
+          you via email, phone and SMS to help you evaluate these options. There is no credit report impact for having
+          your free, no-obligation and confidential consultation.</p>
 
         <br><br>
 
         <div class="result" id="result"></div>
-        
+
       </div>
 
 
-      
-      </div>
-    </form>
+
+  </div>
+  </form>
   </div>
 
   <script src="script.js"></script>
   <script src="loanscript.js"></script>
-   <!--   <script src="submit.js"></script> -->
+  <!--   <script src="submit.js"></script> -->
 </body>
+
 </html>

@@ -9,6 +9,19 @@ let formStepNum = 0;
 // Next Button Click
 nextBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
+    // TODO: Validate form input
+    if (formStepNum === 0) {
+      {
+        const monthlyPayment = document.getElementById('monthly-payment').value;
+        const ficoScore = document.getElementById('fico-score').value;
+
+        if (!monthlyPayment || !ficoScore) {
+          alert('Please fill out all fields');
+          return;
+        }
+
+      }
+    } else if (formStepNum === 1) { }
     formStepNum++;
     updateFormSteps();
     updateProgressBar();
@@ -44,11 +57,11 @@ function updateProgressBar() {
 
   const activeSteps = document.querySelectorAll('.step.active');
   progress.style.width =
-    ((activeSteps.length - 1) / (steps.length - 1)) * 100 + '%';
+    ((activeSteps.length - 1) / (steps.length - 1)) * 90 + '%';
 }
 
 
-document.getElementById('form').addEventListener('button', function(event) {
+document.getElementById('form').addEventListener('button', function (event) {
   var monthly = document.getElementById('monthly-payment').value;
   if (!monthly) {
     event.preventDefault();  // Prevent form submission
