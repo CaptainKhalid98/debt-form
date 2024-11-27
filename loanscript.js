@@ -31,7 +31,8 @@ function calculateLoans() {
     }
 
     // Combine the total loan amount from all loans
-    const totalLoanAmount = studentLoanAmount + taxDebtAmount + unsecuredDebtAmount;
+    //const totalLoanAmount = studentLoanAmount + taxDebtAmount + unsecuredDebtAmount;
+    const totalLoanAmount = unsecuredDebtAmount;
 
     // Calculate loan results for the combined loan
     const loanResult = calculateLoan(totalLoanAmount, monthlyPayment);
@@ -39,7 +40,7 @@ function calculateLoans() {
     // Display the results
     document.getElementById('result').innerHTML = `
         <strong><h2>Consolidation Loan</h2></strong><br>
-        Total loan amount (Student + Tax Debt + Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
+        Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
         
         <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
 
