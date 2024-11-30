@@ -31,8 +31,8 @@ function calculateLoans() {
     }
 
     // Combine the total loan amount from all loans
-    //const totalLoanAmount = studentLoanAmount + taxDebtAmount + unsecuredDebtAmount;
-    const totalLoanAmount = unsecuredDebtAmount;
+    const totalLoanAmount = studentLoanAmount + taxDebtAmount + unsecuredDebtAmount;
+    
 
     // Calculate loan results for the combined loan
     const loanResult = calculateLoan(totalLoanAmount, monthlyPayment);

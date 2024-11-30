@@ -12,9 +12,9 @@
   <div class="form-container">
     <div class="progress-bar">
       <div class="progress" id="progress"></div>
-      <div class="step active">Start</div>
-      <div class="step">About</div>
-      <div class="step">Finances</div>
+      <div class="step active">Step One</div>
+      <div class="step">Step Two</div>
+      <div class="step">Three</div>
       <div class="step end">Results</div>
 
     </div>
@@ -22,18 +22,18 @@
     <form id="form">
       <!-- Step 1 -->
       <div class="form-step active">
-        <h2>Step 1</h2>
+        <h2></h2>
 
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="monthly-payment">How much you can afford to pay monthly for all their credit card, personal loan and other unsecured debt (excluding car, student loans and home loans).?</label>
+          <div class="warning"></div>
+          <p class="questions" for="monthly-payment">How much you can afford to pay monthly for all of your credit card, personal loan and other unsecured debt (excluding car, student and home loans)?</p>
           <input type="number" id="monthly-payment" name="monthly-payment" required placeholder="$0">
         </div>
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label>Are you behind on any of your payments?</label>
+          <div class="warning"></div>
+          <p class="questions">Are you behind on any of your payments?</p>
           <div>
             <input type="radio" id="more-than-90-days" name="payment-status" value="more-than-90-days">
             <label for="more-than-90-days">Yes - More Than 90 Days</label>
@@ -53,9 +53,10 @@
         </div>
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="fico-score">What is your approximate FICO credit score?</label>
+          <div class="warning"></div>
+          <p class="questions" for="fico-score">What is your approximate FICO credit score?</p>
           <select id="fico-score" name="fico-score">
+            <option value="please-select">Please Select</option>
             <option value="above-740">Above 740</option>
             <option value="690-739">690-739</option>
             <option value="620-689">620-689</option>
@@ -74,15 +75,15 @@
 
       <!-- Step 2 -->
       <div class="form-step">
-        <h2>Step 2</h2>
+        <h2></h2>
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="tax-debt-amount">Approximately how much tax debt do you have (that you cannot pay in full right
-            now)</label>
+          <div class="warning"></div>
+          <p class="questions" for="tax-debt-amount">Approximately how much tax debt do you have (that you cannot pay in full right
+            now)</p>
           <input type="number" id="tax-debt-amount" name="tax-debt-amount" required placeholder="$0">
         </div>
         
-         <!-- Student loan
+          Student loan
         <div class="form-group">
           <div class="warning">▲</div>
           <label for="student-loan-amount">Approximately how much student loan debt do you have?</label>
@@ -90,12 +91,12 @@
 
         </div>
       
-      -->
+      
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="unsecured-debt-amount">Approximately how much unsecured debt such as medical, credit card and
+          <div class="warning"></div>
+          <p class="questions" for="unsecured-debt-amount">Approximately how much unsecured debt such as medical, credit card and
             personal loans do you have?
-            Please do not include auto or student loans.</label>
+            Please do not include auto or student loans.</p>
           <input type="number" id="unsecured-debt-amount" name="unsecured-debt-amount" placeholder="$0" required>
         </div>
 
@@ -105,7 +106,7 @@
 
       <!-- Step 3 -->
       <div class="form-step">
-        <h2>Step 3</h2>
+        <h2></h2>
 
         <label for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt
           settlement, with potential savings for each as well as the pros and cons.
@@ -134,26 +135,26 @@
 
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="fname">First Name</label>
+          <div class="warning"></div>
+          <p class="questions" for="fname">First Name</p>
           <input type="text" id="fname" name="fname" placeholder="First Name">
         </div>
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="lname">Last Name</label>
+          <div class="warning"></div>
+          <p class="questions" for="lname">Last Name</p>
           <input type="text" id="lname" name="lname" placeholder="Last Name">
         </div>
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="email">Email Address</label>
+          <div class="warning"></div>
+          <p class="questions" for="email">Email Address</p>
           <input type="text" id="email" name="email" placeholder="Email Address">
         </div>
 
         <div class="form-group">
-          <div class="warning">▲</div>
-          <label for="number">Phone Number</label>
+          <div class="warning"></div>
+          <p class="questions" for="number">Phone Number</p>
           <input type="text" id="number" name="number" placeholder="Phone Number">
         </div>
 
