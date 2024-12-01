@@ -1,19 +1,43 @@
-<form id="myForm">
-    <label for="inputField">Enter something:</label>
-    <input type="text" id="inputField" name="inputField" required>
-    <button type="submit">Next Step</button>
-  </form>
-  <p id="error-message" style="color:red; display:none;">Please fill in the field before proceeding.</p>
-  
-  <script> document.getElementById('myForm').addEventListener('submit', function(event) {
-    var inputField = document.getElementById('inputField').value;
-    if (!inputField) {
-      event.preventDefault();  // Prevent form submission
-      document.getElementById('error-message').style.display = 'block';  // Show error message
-    } else {
-      document.getElementById('error-message').style.display = 'none';  // Hide error message
-    }
-  });
-  </script>
-  </body>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Steps</title>
+  <link rel="stylesheet" href="test.css">
+</head>
+<body>
+  <!-- Steps -->
+  <div class="steps-container">
+    <div class="steps">
+      <div class="step completed">Cart</div>
+      <div class="step completed">Customer info</div>
+      <div class="step active">Payment</div>
+      <div class="step">Order completed</div>
+    </div>
+  </div>
+
+  <!-- Payment Options -->
+  <div class="payment-options">
+    <h2>How would you like to pay?</h2>
+    <div class="options">
+      <button class="option" data-payment="Bank Transfer">
+        Bank Transfer
+      </button>
+      <button class="option" data-payment="Credit Card">
+        Credit Card
+      </button>
+      <button class="option" data-payment="Direct Debit">
+        Direct Debit
+      </button>
+    </div>
+  </div>
+
+  <!-- Continue Button -->
+  <div class="continue-container">
+    <button id="continue-btn" disabled>Continue</button>
+  </div>
+
+  <script src="test.js"></script>
+</body>
+</html>

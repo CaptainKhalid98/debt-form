@@ -1,0 +1,83 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Steps Styling */
+  .steps-container {
+    margin: 20px auto;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .step {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ccc;
+    color: white;
+  }
+  
+  .step.completed {
+    background-color: #f2c94c;
+  }
+  
+  .step.active {
+    background-color: #f2994a;
+  }
+  
+  /* Payment Options Styling */
+  .payment-options {
+    margin: 30px 0;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .option {
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+  
+  .option:hover {
+    border-color: #f2994a;
+  }
+  
+  .option.active {
+    border-color: #f2c94c;
+  }
+  
+  /* Continue Button */
+  #continue-btn {
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #f2994a;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease;
+  }
+  
+  #continue-btn.enabled {
+    cursor: pointer;
+    background-color: #f2c94c;
+  }
+  
+  #continue-btn:hover.enabled {
+    background-color: #f2994a;
+  }
+  
