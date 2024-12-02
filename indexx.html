@@ -31,6 +31,7 @@
           <input type="number" id="monthly-payment" name="monthly-payment" required placeholder="$0">
         </div>
 
+        <!-- Step 1 
         <div class="form-group">
           <div class="warning"></div>
           <p class="questions">Are you behind on any of your payments?</p>
@@ -51,6 +52,27 @@
             <label for="no">No</label>
           </div>
         </div>
+
+-->
+        <div class="form-group">
+          <div class="warning"></div>
+          <p class="questions" for="query">Are you behind on any of your payments?</p>
+          <select id="query" name="query">
+            <option value="please-select">Please Select</option>
+            <option value="more-than-90-days">Yes - More Than 90 Days</option>
+            <option value="more-than-30-days">Yes - More Than 30 Days</option>
+            <option value="more-than-30-days">Yes - More Than 30 Days</option>
+            <option value="Yes - Up To 30 Days">Yes - Up To 30 Days</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+
+
+
+
+
+
 
         <div class="form-group">
           <div class="warning"></div>
@@ -107,30 +129,16 @@
       <!-- Step 3 -->
       <div class="form-step">
         <h2></h2>
+<br>
+       <p class="" for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt
+          settlement, with potential savings for each as well as the pros and cons.  </p>
+        
+          
+        <p class="questions"> Just complete the following questions to receive your free results.</p> 
 
-        <label for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt
-          settlement, with potential savings for each as well as the pros and cons.
-          <br>
-          <br>
-          Just complete the following questions to receive your free results.
-
-        </label>
+      
         <br>
-        <br>
-        <label for="unsecured-dept">Note: Ascend may receive a referral fee if you choose a free consultation. Our
-          partners conduct free, no-hassle evaluations to learn about your options. You can complete it over the phone
-          in as little as 10 minutes. The attorney fees are affordable, and often a flat fee. All initial consultations
-          are 100% free of charge, and all lawyers are licensed in your state. By selecting a partner above to reach out
-          to you, you agree that a partner may contact you (including autodials, pre-recorded calls, and SMS) to answer
-          your questions about relief.
-
-
-        </label>
-
-
-
-        <br>
-        <br>
+       
 
 
 
@@ -160,7 +168,13 @@
 
         <button type="button" class="prev-btn">Back</button>
         <button type="button" onclick="calculateLoans()" class="next-btn">See Results</button>
+<br><br>
+        <label for="unsecured-dept"> <strong>Note:</strong> <i>You may receive a referral fee if you choose a free consultation. Our partners conduct free, no-hassle evaluations to help you explore your options. These evaluations can be completed over the phone in as little as 10 minutes. Attorney fees are affordable and often offered at a flat rate. All initial consultations are 100% free of charge, and all lawyers are licensed in your state. By selecting a partner to reach out to you, you agree that they may contact you (including autodials, pre-recorded calls, and SMS) to address your questions about relief.</i>
+        </label>
+
       </div>
+
+      
 
       <!-- Step 4 -->
       <div class="form-step">
@@ -172,7 +186,27 @@
           your free, no-obligation and confidential consultation.</p>
 
         <br><br>
+         
+        <strong class="loan-head"><h2>Consolidation Loan</h2></strong>
+        <div class="result" id="result"></div>
 
+        <p class="result-headtwo" >You can call below to see if you qualify for a consolidation loan from one of our partners. This initial consultation will have no impact on your credit score.
+
+
+        <strong> Call Now 1-877-850-3328</strong> </p>
+       
+
+
+
+        <strong class="loan-head"><h2>Debt Management</h2></strong>
+        <div class="result" id="resultone"></div>
+
+
+        <strong class="loan-head"><h2>Debt Settlement</h2></strong>
+        <div class="result" id="result"></div>
+
+
+        <strong class="loan-head"><h2>Consolidation Loan</h2></strong>
         <div class="result" id="result"></div>
 
       </div>

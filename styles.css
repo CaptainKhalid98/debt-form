@@ -14,6 +14,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 400px;
+    border: 3px solid #4caf50 ;
   }
   
   .progress-bar {
@@ -90,6 +91,22 @@ body {
     min-width: 160px;
     border-radius: 5px;
   }
+
+  #query {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    display: block;
+    color: #151515;
+    padding: 10px;
+    font-size: 16px;
+    border: #c6c6c6 1px solid;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #e1e0e0;
+    min-width: 160px;
+    border-radius: 5px;
+  }
   
   button {
     background: #4caf50;
@@ -123,7 +140,6 @@ body {
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    margin-top: 16px;
   }
 
   input[type="radio"] {
@@ -135,6 +151,11 @@ body {
   text-align: center;
 }
 
+#resultone {
+  text-align: center;
+}
+
+
 .result-head{
 
   text-align: center;
@@ -145,4 +166,8 @@ body {
 .result-headtwo{
   text-align: center;
   
+}
+
+.loan-head{
+  text-align: center;
 }
