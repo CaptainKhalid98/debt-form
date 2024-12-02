@@ -4,11 +4,15 @@ const monthlyInterestRate = 0.20 / 12;
 // Function to calculate the loan repayment details
 function calculateLoan(loanAmount, monthlyPayment) {
     // Calculate months to pay off the loan using the loan amortization formula
+    console.log('Loan Amount:', loanAmount);
+    console.log('Monthly Payment:', monthlyPayment);
     const months = Math.log(monthlyPayment / (monthlyPayment - loanAmount * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate);
 
     // Calculate the total amount to be paid
     const totalAmountPaid = monthlyPayment * Math.ceil(months);
 
+    console.log('Months:', months);
+    console.log('Total Amount Paid:', totalAmountPaid);
     // Return the results
     return {
         months: Math.ceil(months),
@@ -19,31 +23,32 @@ function calculateLoan(loanAmount, monthlyPayment) {
 // Function to calculate the total loan amount, months, and total payment
 function calculateLoans() {
     // Get input values for the student loan, tax debt, and unsecured debt
-   // const studentLoanAmount = parseFloat(document.getElementById('student-loan-amount').value);
-   // const taxDebtAmount = parseFloat(document.getElementById('tax-debt-amount').value);
+    // const studentLoanAmount = parseFloat(document.getElementById('student-loan-amount').value);
+    // const taxDebtAmount = parseFloat(document.getElementById('tax-debt-amount').value);
     const unsecuredDebtAmount = parseFloat(document.getElementById('unsecured-debt-amount').value);
     const monthlyPayment = parseFloat(document.getElementById('monthly-payment').value);
 
     // Check if all input fields are filled and valid
-   // if (!studentLoanAmount || !taxDebtAmount || !unsecuredDebtAmount || !monthlyPayment || monthlyPayment <= 0) {
-   //     alert("Please fill out all fields correctly.");
+    // if (!studentLoanAmount || !taxDebtAmount || !unsecuredDebtAmount || !monthlyPayment || monthlyPayment <= 0) {
+    //     alert("Please fill out all fields correctly.");
     //    return;
-   // }
+    // }
 
-    if ( !unsecuredDebtAmount || !monthlyPayment || monthlyPayment <= 0) {
+    if (!unsecuredDebtAmount || !monthlyPayment || monthlyPayment <= 0) {
         alert("Please fill out all fields correctly.");
         return;
     }
 
     // Combine the total loan amount from all loans
- // const totalLoanAmount = studentLoanAmount + taxDebtAmount + unsecuredDebtAmount;
+    // const totalLoanAmount = studentLoanAmount + taxDebtAmount + unsecuredDebtAmount;
 
- const totalLoanAmount = unsecuredDebtAmount;
-    
+    const totalLoanAmount = unsecuredDebtAmount;
+
 
     // Calculate loan results for the combined loan
     const loanResult = calculateLoan(totalLoanAmount, monthlyPayment);
 
+    console.log('Loan Result:', loanResult);
     // Display the results
     document.getElementById('result').innerHTML = `
        <br>

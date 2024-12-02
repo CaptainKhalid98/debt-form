@@ -26,9 +26,10 @@
 
 
         <div class="form-group">
-          <div class="warning"></div>
-          <p class="questions" for="monthly-payment">How much you can afford to pay monthly for all of your credit card, personal loan and other unsecured debt (excluding car, student and home loans)?</p>
+          <p class="questions" for="monthly-payment">How much you can afford to pay monthly for all of your credit card,
+            personal loan and other unsecured debt (excluding car, student and home loans)?</p>
           <input type="number" id="monthly-payment" name="monthly-payment" required placeholder="$0">
+          <div class="warning warning-monthly-payment"></div>
         </div>
 
         <!-- Step 1 
@@ -55,16 +56,17 @@
 
 -->
         <div class="form-group">
-          <div class="warning"></div>
           <p class="questions" for="query">Are you behind on any of your payments?</p>
           <select id="query" name="query">
-            <option value="please-select">Please Select</option>
+            <option value="">Please Select</option>
             <option value="more-than-90-days">Yes - More Than 90 Days</option>
             <option value="more-than-30-days">Yes - More Than 30 Days</option>
             <option value="more-than-30-days">Yes - More Than 30 Days</option>
             <option value="Yes - Up To 30 Days">Yes - Up To 30 Days</option>
             <option value="no">No</option>
           </select>
+          <div class="warning warning-query"></div>
+
         </div>
 
 
@@ -75,10 +77,9 @@
 
 
         <div class="form-group">
-          <div class="warning"></div>
           <p class="questions" for="fico-score">What is your approximate FICO credit score?</p>
           <select id="fico-score" name="fico-score">
-            <option value="please-select">Please Select</option>
+            <option value="">Please Select</option>
             <option value="above-740">Above 740</option>
             <option value="690-739">690-739</option>
             <option value="620-689">620-689</option>
@@ -86,6 +87,7 @@
             <option value="580-599">580-599</option>
             <option value="below-580">Below 580</option>
           </select>
+          <div class="warning warning-fico-score"></div>
         </div>
 
 
@@ -95,7 +97,7 @@
 
 
 
-     
+
       <div class="form-step">
         <h2></h2> <!-- Step 2
         <div class="form-group">
@@ -115,11 +117,13 @@
       
       -->
         <div class="form-group">
-          <div class="warning"></div>
-          <p class="questions" for="unsecured-debt-amount">Approximately how much unsecured debt such as medical, credit card and
+          <p class="questions" for="unsecured-debt-amount">Approximately how much unsecured debt such as medical, credit
+            card and
             personal loans do you have?
             Please do not include auto or student loans.</p>
           <input type="number" id="unsecured-debt-amount" name="unsecured-debt-amount" placeholder="$0" required>
+          <div class="warning warning-unsecured-debt-amount"></div>
+
         </div>
 
         <button type="button" class="prev-btn">Back</button>
@@ -129,52 +133,58 @@
       <!-- Step 3 -->
       <div class="form-step">
         <h2></h2>
-<br>
-       <p class="" for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt
-          settlement, with potential savings for each as well as the pros and cons.  </p>
-        
-          
-        <p class="questions"> Just complete the following questions to receive your free results.</p> 
-
-      
         <br>
-       
+        <p class="" for="unsecured-dept">We will compare a debt consolidation loan, a debt management program and debt
+          settlement, with potential savings for each as well as the pros and cons. </p>
+
+
+        <p class="questions"> Just complete the following questions to receive your free results.</p>
+
+
+        <br>
+
 
 
 
         <div class="form-group">
-          <div class="warning"></div>
           <p class="questions" for="fname">First Name</p>
           <input type="text" id="fname" name="fname" placeholder="First Name">
+          <div class="warning warning-fname"></div>
         </div>
 
         <div class="form-group">
-          <div class="warning"></div>
           <p class="questions" for="lname">Last Name</p>
           <input type="text" id="lname" name="lname" placeholder="Last Name">
+          <div class="warning warning-lname"></div>
         </div>
 
         <div class="form-group">
-          <div class="warning"></div>
           <p class="questions" for="email">Email Address</p>
           <input type="text" id="email" name="email" placeholder="Email Address">
+          <div class="warning warning-email"></div>
         </div>
 
         <div class="form-group">
-          <div class="warning"></div>
           <p class="questions" for="number">Phone Number</p>
           <input type="text" id="number" name="number" placeholder="Phone Number">
+          <div class="warning warning-number"></div>
+
         </div>
 
         <button type="button" class="prev-btn">Back</button>
         <button type="button" onclick="calculateLoans()" class="next-btn">See Results</button>
-<br><br>
-        <label for="unsecured-dept"> <strong>Note:</strong> <i>You may receive a referral fee if you choose a free consultation. Our partners conduct free, no-hassle evaluations to help you explore your options. These evaluations can be completed over the phone in as little as 10 minutes. Attorney fees are affordable and often offered at a flat rate. All initial consultations are 100% free of charge, and all lawyers are licensed in your state. By selecting a partner to reach out to you, you agree that they may contact you (including autodials, pre-recorded calls, and SMS) to address your questions about relief.</i>
+        <br><br>
+        <label for="unsecured-dept"> <strong>Note:</strong> <i>You may receive a referral fee if you choose a free
+            consultation. Our partners conduct free, no-hassle evaluations to help you explore your options. These
+            evaluations can be completed over the phone in as little as 10 minutes. Attorney fees are affordable and
+            often offered at a flat rate. All initial consultations are 100% free of charge, and all lawyers are
+            licensed in your state. By selecting a partner to reach out to you, you agree that they may contact you
+            (including autodials, pre-recorded calls, and SMS) to address your questions about relief.</i>
         </label>
 
       </div>
 
-      
+
 
       <!-- Step 4 -->
       <div class="form-step">
@@ -186,27 +196,37 @@
           your free, no-obligation and confidential consultation.</p>
 
         <br><br>
-         
-        <strong class="loan-head"><h2>Consolidation Loan</h2></strong>
+
+        <strong class="loan-head">
+          <h2>Consolidation Loan</h2>
+        </strong>
         <div class="result" id="result"></div>
 
-        <p class="result-headtwo" >You can call below to see if you qualify for a consolidation loan from one of our partners. This initial consultation will have no impact on your credit score.
+        <p class="result-headtwo">You can call below to see if you qualify for a consolidation loan from one of our
+          partners. This initial consultation will have no impact on your credit score.
 
 
-        <strong> Call Now 1-877-850-3328</strong> </p>
-       
+          <strong> Call Now 1-877-850-3328</strong>
+        </p>
 
 
 
-        <strong class="loan-head"><h2>Debt Management</h2></strong>
+
+        <strong class="loan-head">
+          <h2>Debt Management</h2>
+        </strong>
         <div class="result" id="resultone"></div>
 
 
-        <strong class="loan-head"><h2>Debt Settlement</h2></strong>
+        <strong class="loan-head">
+          <h2>Debt Settlement</h2>
+        </strong>
         <div class="result" id="result"></div>
 
 
-        <strong class="loan-head"><h2>Consolidation Loan</h2></strong>
+        <strong class="loan-head">
+          <h2>Consolidation Loan</h2>
+        </strong>
         <div class="result" id="result"></div>
 
       </div>
