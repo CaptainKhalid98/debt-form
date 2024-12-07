@@ -64,19 +64,19 @@ nextBtns.forEach((btn) => {
         'Please enter an unsecured debt amount'
       );
 
-      const isUserCanPayInterest = function () {
-        const loanAmount = document.getElementById('unsecured-debt-amount').value;
-        const monthlyPayment = document.getElementById('monthly-payment').value;
-        const monthlyInterestRate = 0.20 / 12;
-        const interest = loanAmount * monthlyInterestRate;
-        if (monthlyPayment <= interest) {
-          document.querySelector('.warning-unsecured-debt-amount').innerText = 'Monthly payment should be greater than the interest. Your interest is $' + interest.toFixed(2);
-          return false;
-        }
-        return true;
-      };
+      // const isUserCanPayInterest = function () {
+      //   const loanAmount = document.getElementById('unsecured-debt-amount').value;
+      //   const monthlyPayment = document.getElementById('monthly-payment').value;
+      //   const monthlyInterestRate = 0.20 / 12;
+      //   const interest = loanAmount * monthlyInterestRate;
+      //   if (monthlyPayment <= interest) {
+      //     document.querySelector('.warning-unsecured-debt-amount').innerText = 'Monthly payment should be greater than the interest. Your interest is $' + interest.toFixed(2);
+      //     return false;
+      //   }
+      //   return true;
+      // };
 
-      if (isUnunSecuredDebtAmount && isUserCanPayInterest()) {
+      if (isUnunSecuredDebtAmount) {
         const unsecuredDebtAmount = document.getElementById('unsecured-debt-amount').value;
 
         console.log('Form Data:', { unsecuredDebtAmount });

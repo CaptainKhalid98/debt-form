@@ -50,30 +50,44 @@ function calculateLoans() {
 
     console.log('Loan Result:', loanResult);
     // Display the results
-    document.getElementById('result').innerHTML = `
-       <br>
-        Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
-        
-        <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
 
-        Estimated Monthly Payment <br> <strong>$${monthlyPayment.toFixed(2)}</strong><br>
-        <strong>Loan are typically 7.8% - 35.99% APR (this estimate was done at $20% APR)</strong><br><br>
+    if (isNaN(loanResult.months) || isNaN(loanResult.totalAmountPaid)) {
+        // Display the error message
+        document.getElementById('result').innerHTML = `
+            <br>
+            <h3 style="color: red;">You can't pay off your debt!</h3>
+            <p>Please review your inputs and ensure the values are valid for a meaningful calculation.</p>
+            <strong>Total loan amount:</strong> <span style="color: gray;">Invalid</span><br>
+            <strong>Estimated total payment:</strong> <span style="color: gray;">Invalid</span><br>
+            <strong>Estimated debt-free time:</strong> <span style="color: gray;">Unavailable</span><br>
+        `;
+    } else {
+        document.getElementById('result').innerHTML = `
+        <br>
+            Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
+            
+            <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
 
-        Estimated Debt Free In: ${loanResult.months} months (${(loanResult.months / 12).toFixed(1)} years) to pay off.<br>
-        <strong>Your Monthly Payments*</strong>
-    `;
+            Estimated Monthly Payment <br> <strong>$${monthlyPayment.toFixed(2)}</strong><br>
+            <strong>Loan are typically 7.8% - 35.99% APR (this estimate was done at $20% APR)</strong><br><br>
 
-    document.getElementById('resultone').innerHTML = `
-       <br>
-        Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
-        
-        <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
+            Estimated Debt Free In: ${loanResult.months} months (${(loanResult.months / 12).toFixed(1)} years) to pay off.<br>
+            <strong>Your Monthly Payments*</strong>
+        `;
 
-        Estimated Monthly Payment <br> <strong>$${monthlyPayment.toFixed(2)}</strong><br>
-        <strong>Loan are typically 7.8% - 35.99% APR (this estimate was done at $20% APR)</strong><br><br>
+        document.getElementById('resultone').innerHTML = `
+        <br>
+            Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
+            
+            <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
 
-        Estimated Debt Free In: ${loanResult.months} months (${(loanResult.months / 12).toFixed(1)} years) to pay off.<br>
-        <strong>Your Monthly Payments*</strong>
-    `;
+            Estimated Monthly Payment <br> <strong>$${monthlyPayment.toFixed(2)}</strong><br>
+            <strong>Loan are typically 7.8% - 35.99% APR (this estimate was done at $20% APR)</strong><br><br>
+
+            Estimated Debt Free In: ${loanResult.months} months (${(loanResult.months / 12).toFixed(1)} years) to pay off.<br>
+            <strong>Your Monthly Payments*</strong>
+         `;
+    }
+
 }
 
