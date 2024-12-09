@@ -80,14 +80,7 @@ function calculateLoans() {
             <strong>Estimated debt-free time:</strong> <span style="color: gray;">Unavailable</span><br>
         `;
 
-        document.getElementById('resultthree').innerHTML = `
-        <br>
-        <h3 style="color: red;">You can't pay off your debt!</h3>
-        <p>Please review your inputs and ensure the values are valid for a meaningful calculation.</p>
-        <strong>Total loan amount:</strong> <span style="color: gray;">Invalid</span><br>
-        <strong>Estimated total payment:</strong> <span style="color: gray;">Invalid</span><br>
-        <strong>Estimated debt-free time:</strong> <span style="color: gray;">Unavailable</span><br>
-    `;
+    
 
     
     } else {
@@ -119,6 +112,9 @@ function calculateLoans() {
 
          document.getElementById('resulttwo').innerHTML = `
          <br>
+
+              <h3 style="color: red;">You're being provided a hypothetical example for debt settlement below, but for a viable debt settlement program, it would require a higher program payment to finish ideally in fewer than 48 months. Please speak with a counselor to go over your budget and generate a personal estimate for you.</h3>
+
              Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
              
              <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
@@ -128,20 +124,11 @@ function calculateLoans() {
  
              Estimated Debt Free In: ${loanResult.months} months (${(loanResult.months / 12).toFixed(1)} years) to pay off.<br>
              <strong>Your Monthly Payments*</strong>
+
+            
           `;
 
-          document.getElementById('resultthree').innerHTML = `
-          <br>
-              Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
-              
-              <strong>Debt Consolidation Loan cost, estimate, and pros and cons Estimated Total Payment $${loanResult.totalAmountPaid.toFixed(2)}</strong><br><br>
-  
-              Estimated Monthly Payment <br> <strong>$${monthlyPayment.toFixed(2)}</strong><br>
-              <strong>Loan are typically 7.8% - 35.99% APR (this estimate was done at $20% APR)</strong><br><br>
-  
-              Estimated Debt Free In: ${loanResult.months} months (${(loanResult.months / 12).toFixed(1)} years) to pay off.<br>
-              <strong>Your Monthly Payments*</strong>
-           `;
+        
     }
 
 }
