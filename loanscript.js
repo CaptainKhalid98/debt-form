@@ -117,7 +117,7 @@ function calculateLoans() {
             <strong>Your Monthly Payments*</strong>
          `;
 
-         document.getElementById('resultwo').innerHTML = `
+         document.getElementById('resulttwo').innerHTML = `
          <br>
              Total loan amount (Unsecured Debt): <strong>$${totalLoanAmount.toFixed(2)}</strong><br><br>
              
