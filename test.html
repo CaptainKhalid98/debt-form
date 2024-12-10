@@ -3,41 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Steps</title>
-  <link rel="stylesheet" href="test.css">
+  <title>CRM Lead Submission</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .next-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .next-btn:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <!-- Steps -->
-  <div class="steps-container">
-    <div class="steps">
-      <div class="step completed">Cart</div>
-      <div class="step completed">Customer info</div>
-      <div class="step active">Payment</div>
-      <div class="step">Order completed</div>
-    </div>
+
+  <div class="form-container">
+    <form id="form">
+      <label for="f_fname">First Name:</label>
+      <input type="text" id="f_fname" name="f_fname" required>
+
+      <label for="f_lname">Last Name:</label>
+      <input type="text" id="f_lname" name="f_lname" required>
+
+      <label for="f_phone">Main Phone:</label>
+      <input type="tel" id="f_phone" name="f_phone" required>
+
+      <label for="f_mobilephone">Secondary Phone:</label>
+      <input type="tel" id="f_mobilephone" name="f_mobilephone">
+
+      <label for="f_email">Email Address:</label>
+      <input type="email" id="f_email" name="f_email" required>
+
+      <label for="f_totaldebt">Debt Amount:</label>
+      <input type="number" id="f_totaldebt" name="f_totaldebt" required>
+
+      <label for="f_whereyoulive">State:</label>
+      <input type="text" id="f_whereyoulive" name="f_whereyoulive" required>
+
+      <label for="f_city">City:</label>
+      <input type="text" id="f_city" name="f_city">
+
+      <label for="f_zip">Zip Code:</label>
+      <input type="text" id="f_zip" name="f_zip">
+
+      <label for="f_comments">Additional Information:</label>
+      <textarea id="f_comments" name="f_comments"></textarea>
+
+      <input type="hidden" id="data1" name="data1" value="ClickID">
+      <input type="hidden" id="data2" name="data2" value="ClickID">
+      <input type="hidden" id="f_ip" name="f_ip" value="UserIP">
+
+      <button type="button" class="next-btn" onclick="calculateLoans()">See Results</button>
+    </form>
+
+    <div id="result"></div>
   </div>
 
-  <!-- Payment Options -->
-  <div class="payment-options">
-    <h2>How would you like to pay?</h2>
-    <div class="options">
-      <button class="option" data-payment="Bank Transfer">
-        Bank Transfer
-      </button>
-      <button class="option" data-payment="Credit Card">
-        Credit Card
-      </button>
-      <button class="option" data-payment="Direct Debit">
-        Direct Debit
-      </button>
-    </div>
-  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Handle the final submission to CRM when the user clicks "See Results"
+      document.querySelector('.next-btn[onclick="calculateLoans()"]').addEventListener('click', () => {
+        const form = document.getElementById('form');
+        const formData = new FormData(form);
 
-  <!-- Continue Button -->
-  <div class="continue-container">
-    <button id="continue-btn" disabled>Continue</button>
-  </div>
+        // Convert FormData to a JSON object
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
 
-  <script src="test.js"></script>
+        // Send the POST request to the CRM URL
+        fetch('https://www.curadebt.com/signup/inlinform/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formObject), // Send form data as JSON
+        })
+        .then(response => response.json())  // Parse JSON response if needed
+        .then(data => {
+          console.log('Lead added successfully:', data);
+          document.getElementById('result').innerText = 'Thank you for submitting your information!';
+        })
+        .catch(error => {
+          console.error('Error adding lead:', error);
+          document.getElementById('result').innerText = 'Something went wrong, please try again.';
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
