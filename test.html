@@ -44,6 +44,7 @@
 <body>
 
   <div class="form-container">
+    <h2>Submit Your Information</h2>
     <form id="form">
       <label for="f_fname">First Name:</label>
       <input type="text" id="f_fname" name="f_fname" required>
@@ -79,44 +80,44 @@
       <input type="hidden" id="data2" name="data2" value="ClickID">
       <input type="hidden" id="f_ip" name="f_ip" value="UserIP">
 
-      <button type="button" class="next-btn" onclick="calculateLoans()">See Results</button>
+      <button type="button" class="next-btn" onclick="handleSubmit()">See Results</button>
     </form>
 
     <div id="result"></div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Handle the final submission to CRM when the user clicks "See Results"
-      document.querySelector('.next-btn[onclick="calculateLoans()"]').addEventListener('click', () => {
-        const form = document.getElementById('form');
-        const formData = new FormData(form);
+    function handleSubmit() {
+      const form = document.getElementById('form');
+      const formData = new FormData(form);
 
-        // Convert FormData to a JSON object
-        const formObject = {};
-        formData.forEach((value, key) => {
-          formObject[key] = value;
-        });
-
-        // Send the POST request to the CRM URL
-        fetch('https://www.curadebt.com/signup/inlinform/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formObject), // Send form data as JSON
-        })
-        .then(response => response.json())  // Parse JSON response if needed
-        .then(data => {
-          console.log('Lead added successfully:', data);
-          document.getElementById('result').innerText = 'Thank you for submitting your information!';
-        })
-        .catch(error => {
-          console.error('Error adding lead:', error);
-          document.getElementById('result').innerText = 'Something went wrong, please try again.';
-        });
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
       });
-    });
+
+      fetch('https://www.curadebt.com/signup/inlinform/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formObject),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Lead added successfully:', data);
+        document.getElementById('result').innerText = 'Thank you for submitting your information!';
+      })
+      .catch(error => {
+        console.error('Error adding lead:', error);
+        document.getElementById('result').innerText = 'Something went wrong, please try again.';
+      });
+    }
   </script>
 
 </body>
