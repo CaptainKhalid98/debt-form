@@ -28,7 +28,7 @@
         <div class="form-group">
           <p class="questions" for="monthly-payment">How much you can afford to pay monthly for all of your credit card,
             personal loan and other unsecured debt (excluding car, student and home loans)?</p>
-          <input type="number" id="monthly-payment" name="monthly-payment" required placeholder="$0">
+          <input type="number" id="monthly-payment" name="f_data1" required placeholder="$0">
           <div class="warning warning-monthly-payment"></div>
         </div>
 
@@ -57,7 +57,7 @@
 -->
         <div class="form-group">
           <p class="questions" for="query">Are you behind on any of your payments?</p>
-          <select id="query" name="query">
+          <select id="query" name="f_data2">
             <option value="">Please Select</option>
             <option value="more-than-90-days">Yes - More Than 90 Days</option>
             <option value="more-than-30-days">Yes - More Than 30 Days</option>
@@ -77,7 +77,7 @@
 
         <div class="form-group">
           <p class="questions" for="fico-score">What is your approximate FICO credit score?</p>
-          <select id="fico-score" name="fico-score">
+          <select id="fico-score" name="f_data3">
             <option value="">Please Select</option>
             <option value="above-740">Above 740</option>
             <option value="690-739">690-739</option>
@@ -120,7 +120,7 @@
             card and
             personal loans do you have?
             Please do not include auto or student loans.</p>
-          <input type="number" id="unsecured-debt-amount" name="unsecured-debt-amount" placeholder="$0" required>
+          <input type="number" id="unsecured-debt-amount" name="f_data4" placeholder="$0" required>
           <div class="warning warning-unsecured-debt-amount"></div>
 
         </div>
@@ -147,25 +147,25 @@
 
         <div class="form-group">
           <p class="questions" for="fname">First Name</p>
-          <input type="text" id="fname" name="fname" placeholder="First Name">
+          <input type="text" id="fname" name="f_fname" placeholder="First Name">
           <div class="warning warning-fname"></div>
         </div>
 
         <div class="form-group">
           <p class="questions" for="lname">Last Name</p>
-          <input type="text" id="lname" name="lname" placeholder="Last Name">
+          <input type="text" id="lname" name="f_lname" placeholder="Last Name">
           <div class="warning warning-lname"></div>
         </div>
 
         <div class="form-group">
           <p class="questions" for="email">Email Address</p>
-          <input type="text" id="email" name="email" placeholder="Email Address">
+          <input type="text" id="email" name="f_email" placeholder="Email Address">
           <div class="warning warning-email"></div>
         </div>
 
         <div class="form-group">
           <p class="questions" for="number">Phone Number</p>
-          <input type="text" id="number" name="number" placeholder="Phone Number">
+          <input type="text" id="number" name="f_phone" placeholder="Phone Number">
           <div class="warning warning-number"></div>
 
         </div>
