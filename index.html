@@ -120,7 +120,7 @@
             card and
             personal loans do you have?
             Please do not include auto or student loans.</p>
-          <input type="number" id="unsecured-debt-amount" name="f_data4" placeholder="$0" required>
+          <input type="number" id="unsecured-debt-amount" name="f_totaldebt" placeholder="$0" required>
           <div class="warning warning-unsecured-debt-amount"></div>
 
         </div>
@@ -171,9 +171,13 @@
         </div>
 
         <button type="button" class="prev-btn">Back</button>
-        <button type="button" onclick="calculateLoans()" class="next-btn">See Results</button>
+        <button type="submit" onclick="calculateLoans()" class="next-btn">See Results</button>
         <br><br>
-        <label for="unsecured-dept"> <strong>Note:</strong> <i>We offer a free, hassle-free evaluation designed to help you explore your available options. These quick consultations can be completed over the phone in just 10 minutes. Best of all, your initial consultation is entirely free of charge. By requesting your free evaluation, you consent to being contacted by us (including via autodialed or pre-recorded calls and SMS) so we can address your questions and provide the assistance you need.</i>
+        <label for="unsecured-dept"> <strong>Note:</strong> <i>We offer a free, hassle-free evaluation designed to help
+            you explore your available options. These quick consultations can be completed over the phone in just 10
+            minutes. Best of all, your initial consultation is entirely free of charge. By requesting your free
+            evaluation, you consent to being contacted by us (including via autodialed or pre-recorded calls and SMS) so
+            we can address your questions and provide the assistance you need.</i>
         </label>
 
       </div>
@@ -211,27 +215,29 @@
         </strong>
         <div class="result" id="resultone"></div>
         <br><br>
-        <p style="text-align: center; color:green;"><strong>We can give you a free evaluation to see if debt management is a viable option for you. Please call 1-877-850-3328. </strong></p>
+        <p style="text-align: center; color:green;"><strong>We can give you a free evaluation to see if debt management
+            is a viable option for you. Please call 1-877-850-3328. </strong></p>
 
         <strong class="loan-head">
           <h2>Debt Settlement</h2>
         </strong>
         <div class="result" id="resulttwo"></div>
         <br><br>
-        <p style="text-align: center; color:green;"><strong>We can give you a free evaluation to see if debt settlement is a viable option for you. Please call 1-877-850-3328. </strong></p>
-        
+        <p style="text-align: center; color:green;"><strong>We can give you a free evaluation to see if debt settlement
+            is a viable option for you. Please call 1-877-850-3328. </strong></p>
+
         <p style="text-align: center;">-----------</p>
-       
 
 
 
-  </div>
-  </form>
+
+      </div>
+    </form>
   </div>
 
   <script src="script.js"></script>
   <script src="loanscript.js"></script>
-  <!--   <script src="submit.js"></script> -->
+  <script src="submit.js"></script>
 </body>
 
 </html>
