@@ -23,14 +23,16 @@ form.addEventListener('submit', async (event) => {
     const response = await fetch(url, { method: 'GET' });
 
     if (response.ok) {
-      alert('Form submitted successfully!');
+      // alert('Form submitted successfully!');
+      console.log('Form submitted successfully!');
       // responseMessage.textContent = 'Form submitted successfully!';
     } else {
-      alert('Error submitting the form.');
+      // alert('Error submitting the form.');
+      console.error('Error submitting the form.');
       // responseMessage.textContent = 'Error submitting the form.';
     }
   } catch (error) {
-    alert('An error occurred while submitting the form.');
+    // alert('An error occurred while submitting the form.');
     // responseMessage.textContent = 'An error occurred while submitting the form.';
     console.error('Error:', error);
   }
