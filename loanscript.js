@@ -50,7 +50,6 @@ function calculateLoans() {
     const consolidationResult = calculateDebtConsolidation(unsecuredDebtAmount, monthlyPayment);
     document.getElementById('result').innerHTML = `
         <br>
-        Total loan amount (Unsecured Debt): <strong>$${unsecuredDebtAmount.toFixed(2)}</strong><br><br>
         <strong>Debt Consolidation Loan</strong><br>
         Estimated Total Payment: <strong>$${consolidationResult.totalAmountPaid.toFixed(2)}</strong><br>
         Estimated Monthly Payment: <strong>$${monthlyPayment.toFixed(2)}</strong><br>
@@ -60,8 +59,6 @@ function calculateLoans() {
     // Debt Management Calculation
     const managementResult = calculateDebtManagement(unsecuredDebtAmount, 50, 0.15); // $50 monthly fee, 15% annual interest
     document.getElementById('resultone').innerHTML = `
-        <br>
-        Total loan amount (Unsecured Debt): <strong>$${unsecuredDebtAmount.toFixed(2)}</strong><br><br>
         <strong>Debt Management Plan</strong><br>
         Estimated Total Payment: <strong>$${managementResult.totalAmountPaid.toFixed(2)}</strong><br>
         Estimated Monthly Payment: <strong>$${(managementResult.totalAmountPaid / 60).toFixed(2)}</strong><br>
@@ -71,8 +68,6 @@ function calculateLoans() {
     // Debt Settlement Calculation
     const settlementResult = calculateDebtSettlement(unsecuredDebtAmount, 0.50, 0.20, 45); // 50% reduction, 20% fee, $45 legal protection fee
     document.getElementById('resulttwo').innerHTML = `
-        <br>
-        Total loan amount (Unsecured Debt): <strong>$${unsecuredDebtAmount.toFixed(2)}</strong><br><br>
         <strong>Debt Settlement Program</strong><br>
         Estimated Total Payment: <strong>$${settlementResult.totalAmountPaid.toFixed(2)}</strong><br>
         Estimated Monthly Payment: <strong>$${(settlementResult.totalAmountPaid / 48).toFixed(2)}</strong><br>
