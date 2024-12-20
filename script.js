@@ -20,6 +20,32 @@ function validateField(fieldId, warningClass, errorMessage) {
   }
 }
 
+//10 digint number validation
+function validatePhone(fieldId) {
+  const phone = document.getElementById(fieldId).value;
+  const warningElement = document.querySelector('.warning-number');
+  if (phone.length != 10) {
+    warningElement.innerText = 'Please enter a valid phone number';
+    return false;
+  } else {
+    warningElement.innerText = '';
+    return true;
+  }
+}
+
+//Email validation  
+function validateEmail(fieldId) {
+  const email = document.getElementById(fieldId).value;
+  const warningElement = document.querySelector('.warning-email');
+  if (!email.includes('@') || !email.includes('.')) {
+    warningElement.innerText = 'Please enter a valid email';
+    return false;
+  } else {
+    warningElement.innerText = '';
+    return true;
+  }
+}
+
 // Next Button Click
 nextBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -98,17 +124,9 @@ nextBtns.forEach((btn) => {
         'Please enter a last name'
       );
 
-      const isEmailValid = validateField(
-        'email',
-        'warning-email',
-        'Please enter an email'
-      );
+      const isEmailValid = validateEmail('email');
 
-      const isPhoneValid = validateField(
-        'number',
-        'warning-number',
-        'Please enter a phone number'
-      );
+      const isPhoneValid = validatePhone('number');
 
       if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneValid) {
         const firstName = document.getElementById('fname').value;
