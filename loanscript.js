@@ -1,12 +1,15 @@
-// Fixed APR calculation: 20% annual rate becomes 1.6667% per month (monthly interest rate)
-const monthlyInterestRate = 0.20 / 12;
+// Fixed APR calculation: 17% annual rate becomes ~1.4167% per month (monthly interest rate)
+const monthlyInterestRate = 0.17 / 12;
 
 // Function to calculate the loan repayment details for Debt Consolidation
-function calculateDebtConsolidation(loanAmount, monthlyPayment) {
-    const months = Math.log(monthlyPayment / (monthlyPayment - loanAmount * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate);
+function calculateDebtConsolidation(loanAmount, monthlyPayment, originationFee) {
+    const netLoanAmount = loanAmount - loanAmount * originationFee; // Loan amount after origination fee
+    const months = Math.log(monthlyPayment / (monthlyPayment - netLoanAmount * monthlyInterestRate)) / Math.log(1 + monthlyInterestRate);
     const totalAmountPaid = monthlyPayment * Math.ceil(months);
 
     return {
+        originationFee: loanAmount * originationFee,
+        netLoanAmount: netLoanAmount,
         months: Math.ceil(months),
         totalAmountPaid: totalAmountPaid
     };
@@ -47,10 +50,12 @@ function calculateLoans() {
     }
 
     // Debt Consolidation Calculation
-    const consolidationResult = calculateDebtConsolidation(unsecuredDebtAmount, monthlyPayment);
+    const consolidationResult = calculateDebtConsolidation(unsecuredDebtAmount, monthlyPayment, 0.02); // 2% origination fee
     document.getElementById('result').innerHTML = `
         <br>
         <strong>Debt Consolidation Loan</strong><br>
+        Origination Fee: <strong>$${consolidationResult.originationFee.toFixed(2)}</strong><br>
+        Net Loan Amount: <strong>$${consolidationResult.netLoanAmount.toFixed(2)}</strong><br>
         Estimated Total Payment: <strong>$${consolidationResult.totalAmountPaid.toFixed(2)}</strong><br>
         Estimated Monthly Payment: <strong>$${monthlyPayment.toFixed(2)}</strong><br>
         Estimated Debt Free In: ${consolidationResult.months} months (${(consolidationResult.months / 12).toFixed(1)} years)<br>
